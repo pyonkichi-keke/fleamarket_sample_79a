@@ -22,3 +22,91 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+  ***DB設計***
+
+## Usersテーブル
+  |Column|Type|Options|
+  |------|----|-------|
+  |nickname|string|null: false, limt:15, index:true|
+  |password|integer|null:false|
+  |introduction|text|-------|
+  |first_name|string|null:false|
+  |last_name|string|null:false|
+  |first_name_kana|string|null:false|
+  |last_name_kana|string|null:false|
+  |birthday|string|null:false|
+  |e-mail|string|null:false, unique:true|
+### Association
+- has_many :commnets
+- has_many :products
+- has_many :likes
+## Addressesテーブル
+  |Column|Type|Options|
+  |------|----|-------|
+  |user_id|reterences|foreing_key:true|
+  |postal_code|string|null:false|
+  |prefecture|string|null:false|
+  |city|string|null:false|
+  |addresses|string|null:false|
+  |apartment|string|-------|
+### Association
+- belongs_to User
+## Productsテーブル
+  |Column|Type|Options|
+  |------|----|-------|
+  |user_id|reterences|foreing_key:true|
+  |name|string|null:false|
+  |price|string|null:false|
+  |product|string|null:false|
+  |product_images|text|null:false|
+  |text|text|-------|
+  |status|string|null:false|
+  |size|string|null:false|
+  |prefecture|string|null:false|
+  |delivery|string|null:false|
+  |delivery_time|string|null:false|
+  |brand|string|null:false|
+  |buy_user_id|reterences|foreing_key:true|
+### Association
+- belongs_to :User
+- has_many :Commnets
+- belongs_to :categories
+## commentsテーブル
+  |Column|Type|Options|
+  |------|----|-------|
+  |user_id|reterences|foreing_key:true|
+  |comment|txet|-------|
+  |product|reterences|foreing_key:true|
+### Association
+- belongs_to :User
+- belongs_to :Product
+## Credit_cardsテーブル
+  |Column|Type|Options|
+  |------|----|-------|
+  |user_id|reterences|foreing_key:true|
+  |card_company|string|null:false|
+  |card_number|integer|null:false|
+  |card_year|integer|null:false|
+  |card_month|integer|null:false|
+  |card_pass|integer|null:false|
+  |card_id|integer|null:false|
+### Association
+- belongs_to :User
+## Likesテーブル
+  |Column|Type|Options|
+  |------|----|-------|
+  |user_id|reterences|foreing_key:true|
+  |product_id|reterences|foreing_key:true|
+### Association
+- belongs_to :User
+- belongs_to :Product
+## Categoriesテーブル
+  |Column|Type|Options|
+  |------|----|-------|
+  |name|string|null:false|
+  |ancestry_large|string|null:false|
+  |ancestry_middle|string|null:false|
+  |ancestry_small|string|null:false|
+### Association
+- has_many :products
