@@ -40,7 +40,12 @@ Things you may want to cover:
 ### Association
 - has_many :commnets
 - has_many :products
-- has_many :likes
+- has_many :like_product, through: :likes, source: :product
+- has_many :comments dependent: :destroy
+- has_many :likes dependent: :destroy
+- has_many :products dependent: :destroy
+- has_one :credit_card dependent: :destroy
+- has_one :addresses dependent: :destroy
 ## Addressesテーブル
   |Column|Type|Options|
   |------|----|-------|
@@ -61,7 +66,7 @@ Things you may want to cover:
   |product|string|null:false|
   |product_images|text|null:false|
   |text|text|-------|
-  |status|string|null:false|
+  |status|integer|null:false, defolt:0|
   |size|string|null:false|
   |prefecture|string|null:false|
   |delivery|string|null:false|
@@ -69,9 +74,12 @@ Things you may want to cover:
   |brand|string|null:false|
   |buy_user_id|reterences|foreing_key:true|
 ### Association
-- belongs_to :User
-- has_many :Commnets
+- belongs_to :user
+- has_many :comment_users, through: :comments, source: :user
 - belongs_to :categories
+- has_many :likes dependent: :destroy
+- has_many :comments dependent: :destroy
+- has_many :categories dependent: :destroy
 ## commentsテーブル
   |Column|Type|Options|
   |------|----|-------|
@@ -105,8 +113,6 @@ Things you may want to cover:
   |Column|Type|Options|
   |------|----|-------|
   |name|string|null:false|
-  |ancestry_large|string|null:false|
-  |ancestry_middle|string|null:false|
-  |ancestry_small|string|null:false|
+  |ancestry|string|null:false|
 ### Association
 - has_many :products
