@@ -53,13 +53,13 @@ Things you may want to cover:
   |postal_code|string|null:false|
   |prefecture_id(active_hash)|references|null:false|
   |city|string|null:false|
-  |addresses|string|null:false|
+  |addresse|string|null:false|
   |apartment|string|-------|
   |first_name|string|null:false|
   |last_name|string|null:false|
   |first_name_kana|string|null:false|
   |last_name_kana|string|null:false|
-  |tell|integer|null;false|
+  |tel|integer|------|
 ### Association
 - belongs_to User
 ## Productsテーブル
@@ -68,16 +68,15 @@ Things you may want to cover:
   |user_id|references|foreing_key:true|
   |name|string|null:false|
   |price|string|null:false|
-  |product|string|null:false|
   |text|text|-------|
-  |status(active_hash)|references|null:false|
+  |status(active_hash)|references|foreing_key:true|
   |size|string|null:false|
   |prefecture_id(active_hash)|references|null:false|
-  |delivery|string|null:false|
+  |delivery(active_hash)|string|foreing_key:true|
   |delivery_time|string|null:false|
-  |brand|string|null:false|
+  |brand(active_hash)|string|foreing_key:true|
   |buy_user_id|references|foreing_key:true|
-  |category|stiring|foreing_key:true|
+  |category_id|references|foreing_key:true|
 ### Association
 - belongs_to :user
 - has_many :comment_users, through: :comments, source: :user
@@ -92,14 +91,14 @@ Things you may want to cover:
   |comment|txet|-------|
   |product|references|foreing_key:true|
 ### Association
-- belongs_to :User
-- belongs_to :Product
+- belongs_to :user
+- belongs_to :product
 ## Credit_cardsテーブル
   |Column|Type|Options|
   |------|----|-------|
   |user_id|references|foreing_key:true|
-  |customer_id|references|null:false|
-  |card_token|integer|null:false|
+  |customer_id|string|null:false|
+  |card_token|string|null:false|
 ### Association
 - belongs_to :user
 ## Likesテーブル
@@ -114,14 +113,14 @@ Things you may want to cover:
   |Column|Type|Options|
   |------|----|-------|
   |name|string|null:false|
-  |ancestry|string|null:false|
+  |ancestry(active_hash)|string|null:false|
 ### Association
 - has_many :products
 ## Imagesテーブル
   |image1|string|null:false|
-  |image2|string|null:false|
-  |image3|string|null:false|
-  |image4|string|null:false|
+  |image2|string|-------|
+  |image3|string|-------|
+  |image4|string|-------|
   |product_id|references|foreing_key:true|
 ### Association
-- has_many :products
+- belongs_to:products
