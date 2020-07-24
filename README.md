@@ -69,12 +69,12 @@ Things you may want to cover:
   |name|string|null:false|
   |price|string|null:false|
   |text|text|-------|
-  |status(active_hash)|references|foreing_key:true|
-  |size|string|null:false|
+  |status_id(active_hash)|references|foreing_key:true|
+  |size|s|null:false|
   |prefecture_id(active_hash)|references|null:false|
-  |delivery(active_hash)|string|foreing_key:true|
+  |delivery(active_hash)|references|foreing_key:true|
   |delivery_time|string|null:false|
-  |brand(active_hash)|string|foreing_key:true|
+  |brand-id(active_hash)|references|foreing_key:true|
   |buy_user_id|references|foreing_key:true|
   |category_id|references|foreing_key:true|
 ### Association
@@ -109,13 +109,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :product
-## Categoriesテーブル
-  |Column|Type|Options|
-  |------|----|-------|
-  |name|string|null:false|
-  |ancestry(active_hash)|string|null:false|
-### Association
-- has_many :products
 ## Imagesテーブル
   |image1|string|null:false|
   |image2|string|-------|
