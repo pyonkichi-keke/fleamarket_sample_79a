@@ -28,7 +28,7 @@ Things you may want to cover:
 ## Usersテーブル
   |Column|Type|Options|
   |------|----|-------|
-  |nickname|string|null: false, limt:15, index:true|
+  |nickname|string|null:false, limt:15, index:true|
   |password|integer|null:false|
   |introduction|text|-------|
   |first_name|string|null:false|
@@ -36,7 +36,7 @@ Things you may want to cover:
   |first_name_kana|string|null:false|
   |last_name_kana|string|null:false|
   |birthday|string|null:false|
-  |e-mail|string|null:false, unique:true|
+  |e_mail|string|null:false, unique:true|
 ### Association
 - has_many :commnets
 - has_many :products
@@ -49,70 +49,79 @@ Things you may want to cover:
 ## Addressesテーブル
   |Column|Type|Options|
   |------|----|-------|
-  |user_id|reterences|foreing_key:true|
+  |user_id|references|foreing_key:true|
   |postal_code|string|null:false|
-  |prefecture|string|null:false|
+  |prefecture_id(active_hash)|references|null:false|
   |city|string|null:false|
   |addresses|string|null:false|
   |apartment|string|-------|
+  |first_name|string|null:false|
+  |last_name|string|null:false|
+  |first_name_kana|string|null:false|
+  |last_name_kana|string|null:false|
+  |tell|integer|null;false|
 ### Association
 - belongs_to User
 ## Productsテーブル
   |Column|Type|Options|
   |------|----|-------|
-  |user_id|reterences|foreing_key:true|
+  |user_id|references|foreing_key:true|
   |name|string|null:false|
   |price|string|null:false|
   |product|string|null:false|
-  |product_images|text|null:false|
   |text|text|-------|
-  |status|integer|null:false, defolt:0|
+  |status(active_hash)|references|null:false|
   |size|string|null:false|
-  |prefecture|string|null:false|
+  |prefecture_id(active_hash)|references|null:false|
   |delivery|string|null:false|
   |delivery_time|string|null:false|
   |brand|string|null:false|
-  |buy_user_id|reterences|foreing_key:true|
+  |buy_user_id|references|foreing_key:true|
+  |category|stiring|foreing_key:true|
 ### Association
 - belongs_to :user
 - has_many :comment_users, through: :comments, source: :user
 - belongs_to :categories
 - has_many :likes dependent: :destroy
 - has_many :comments dependent: :destroy
-- has_many :categories dependent: :destroy
+- belings_to :catefory
 ## commentsテーブル
   |Column|Type|Options|
   |------|----|-------|
-  |user_id|reterences|foreing_key:true|
+  |user_id|references|foreing_key:true|
   |comment|txet|-------|
-  |product|reterences|foreing_key:true|
+  |product|references|foreing_key:true|
 ### Association
 - belongs_to :User
 - belongs_to :Product
 ## Credit_cardsテーブル
   |Column|Type|Options|
   |------|----|-------|
-  |user_id|reterences|foreing_key:true|
-  |card_company|string|null:false|
-  |card_number|integer|null:false|
-  |card_year|integer|null:false|
-  |card_month|integer|null:false|
-  |card_pass|integer|null:false|
-  |card_id|integer|null:false|
+  |user_id|references|foreing_key:true|
+  |customer_id|references|null:false|
+  |card_token|integer|null:false|
 ### Association
-- belongs_to :User
+- belongs_to :user
 ## Likesテーブル
   |Column|Type|Options|
   |------|----|-------|
-  |user_id|reterences|foreing_key:true|
-  |product_id|reterences|foreing_key:true|
+  |user_id|references|foreing_key:true|
+  |product_id|references|foreing_key:true|
 ### Association
-- belongs_to :User
-- belongs_to :Product
+- belongs_to :user
+- belongs_to :product
 ## Categoriesテーブル
   |Column|Type|Options|
   |------|----|-------|
   |name|string|null:false|
   |ancestry|string|null:false|
+### Association
+- has_many :products
+## Imagesテーブル
+  |image1|string|null:false|
+  |image2|string|null:false|
+  |image3|string|null:false|
+  |image4|string|null:false|
+  |product_id|references|foreing_key:true|
 ### Association
 - has_many :products
