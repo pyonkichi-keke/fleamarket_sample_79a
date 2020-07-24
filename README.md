@@ -40,16 +40,16 @@ Things you may want to cover:
 ### Association
 - has_many :commnets
 - has_many :products
-- has_many :like_product, through: :likes, source: :product
+- has_many :likes_product, through: :likes, source: :product
 - has_many :comments dependent: :destroy
 - has_many :likes dependent: :destroy
 - has_many :products dependent: :destroy
 - has_one :credit_card dependent: :destroy
-- has_one :addresses dependent: :destroy
+- has_one :addresse dependent: :destroy
 ## Addressesテーブル
   |Column|Type|Options|
   |------|----|-------|
-  |user_id|references|foreing_key:true|
+  |user_id|references|null:false, foreing_key:true|
   |postal_code|string|null:false|
   |prefecture_id(active_hash)|references|null:false|
   |city|string|null:false|
@@ -61,34 +61,33 @@ Things you may want to cover:
   |last_name_kana|string|null:false|
   |tel|integer|------|
 ### Association
-- belongs_to User
+- belongs_to user
 ## Productsテーブル
   |Column|Type|Options|
   |------|----|-------|
-  |user_id|references|foreing_key:true|
+  |user_id|references|null:false, foreing_key:true|
   |name|string|null:false|
   |price|string|null:false|
   |text|text|-------|
   |status_id(active_hash)|references|foreing_key:true|
-  |size|s|null:false|
+  |size|string|null:false|
   |prefecture_id(active_hash)|references|null:false|
   |delivery(active_hash)|references|foreing_key:true|
   |delivery_time|string|null:false|
   |brand-id(active_hash)|references|foreing_key:true|
   |buy_user_id|references|foreing_key:true|
-  |category_id|references|foreing_key:true|
+  |category_id(active_hash)|references|foreing_key:true|
 ### Association
 - belongs_to :user
 - has_many :comment_users, through: :comments, source: :user
 - belongs_to :categories
 - has_many :likes dependent: :destroy
 - has_many :comments dependent: :destroy
-- belings_to :catefory
 ## commentsテーブル
   |Column|Type|Options|
   |------|----|-------|
-  |user_id|references|foreing_key:true|
-  |comment|txet|-------|
+  |user_id|references|null:false, foreing_key:true|
+  |comment|text|-------|
   |product|references|foreing_key:true|
 ### Association
 - belongs_to :user
@@ -96,7 +95,7 @@ Things you may want to cover:
 ## Credit_cardsテーブル
   |Column|Type|Options|
   |------|----|-------|
-  |user_id|references|foreing_key:true|
+  |user_id|references|null:false, foreing_key:true|
   |customer_id|string|null:false|
   |card_token|string|null:false|
 ### Association
@@ -104,16 +103,13 @@ Things you may want to cover:
 ## Likesテーブル
   |Column|Type|Options|
   |------|----|-------|
-  |user_id|references|foreing_key:true|
+  |user_id|references|null:false, foreing_key:true|
   |product_id|references|foreing_key:true|
 ### Association
 - belongs_to :user
 - belongs_to :product
 ## Imagesテーブル
-  |image1|string|null:false|
-  |image2|string|-------|
-  |image3|string|-------|
-  |image4|string|-------|
+  |image|string|null:false|
   |product_id|references|foreing_key:true|
 ### Association
-- belongs_to:products
+- belongs_to:product
