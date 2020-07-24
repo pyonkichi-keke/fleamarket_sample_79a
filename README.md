@@ -66,7 +66,7 @@ Things you may want to cover:
   |Column|Type|Options|
   |------|----|-------|
   |user_id|references|null:false, foreing_key:true|
-  |name|string|null:false|
+  |index_name|string|null:false|
   |price|string|null:false|
   |text|text|-------|
   |status_id(active_hash)|references|foreing_key:true|
