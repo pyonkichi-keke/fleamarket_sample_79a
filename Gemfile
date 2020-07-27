@@ -64,3 +64,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'unicorn'
 end
+
+gem 'devise'
+gem 'haml-rails'
+gem 'erb2haml'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'active_hash'
+gem 'pry-rails'

@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2020_07_26_094146) do
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "postal_code", null: false
+    t.integer "prefecture_id", null: false
     t.text "city", null: false
     t.string "address", null: false
     t.string "apartment"
@@ -48,8 +49,11 @@ ActiveRecord::Schema.define(version: 2020_07_26_094146) do
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image", null: false
+    t.bigint "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_images_on_product_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -62,13 +66,27 @@ ActiveRecord::Schema.define(version: 2020_07_26_094146) do
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name", null: false
+    t.string "price", null: false
+    t.text "text"
+    t.integer "status_id", null: false
+    t.string "size"
+    t.integer "prefecture_id", null: false
+    t.integer "delivery_id", null: false
+    t.string "delivery_time", null: false
+    t.integer "brand_id", null: false
+    t.bigint "buy_user_id"
+    t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["buy_user_id"], name: "index_products_on_buy_user_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", limit: 15, null: false
-    t.text "intodaction", null: false
+    t.text "introdaction"
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "first_name_kana", null: false
@@ -92,4 +110,5 @@ ActiveRecord::Schema.define(version: 2020_07_26_094146) do
   add_foreign_key "credit_cards", "users"
   add_foreign_key "likes", "products"
   add_foreign_key "likes", "users"
+  add_foreign_key "products", "users", column: "buy_user_id"
 end
