@@ -14,7 +14,6 @@ class Address < ApplicationRecord
   validates :prefecture, presence: true 
   validates :city, presence: true
   validates :address, presence: true 
-  validates :apartment, absence: true
-  validates :tel, presence: true, allow_blank: true, format: { with: /\A\d{10,11}\z/ }
+  validates :tel, allow_blank: true, format: { with: /\A\d{10,11}\z/ }
 
 end
