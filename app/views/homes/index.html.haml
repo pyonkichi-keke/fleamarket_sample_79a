@@ -12,6 +12,11 @@
     .header_link_left
       .header_link_left_category
         カテゴリー
+        .header_link_left_category_lists
+          - @categories.each do |category|
+            .header_link_left_category_lists_name
+              = category.name
+              %br/
       .header_link_left_brand
         ブランド
     
@@ -35,6 +40,7 @@
 .main
   .main_top
     =image_tag '/material/pict/bg-mainVisual-pict_pc.jpg', class: "main_top_img"
+
     .main_top_title
       %h1
         人生を変えるフリマアプリ
@@ -47,45 +53,45 @@
     .main_reason_title
       FURIMAが選ばれる３つの理由
 
-      %ul.main_reason_lists
-        %li.main_reason_list
-          .main_reason_list_img
-            .main_reason_list_img_num
-              1
-            = image_tag '/material/pict/pict-reason-01.jpg', class: "main_reason_list_img"
-          .main_reason_list_content
-            %h1
-              %span
-                3分
-              ですぐに出品
-            %p
-              スマホで入力するだけで簡単に出品ができる！
+    %ul.main_reason_lists
+      %li.main_reason_list
+        .main_reason_list_img
+          .main_reason_list_img_num
+            1
+          = image_tag '/material/pict/pict-reason-01.jpg', class: "main_reason_list_img"
+        .main_reason_list_content
+          %h1
+            %span
+              3分
+            ですぐに出品
+          %p
+            スマホで入力するだけで簡単に出品ができる！
 
-        %li.main_reason_list  
-          .main_reason_list_img
-            .main_reason_list_img_num
-              2
-            = image_tag '/material/pict/pict-reason-02.jpg', class: "main_reason_list_img"
-          .main_reason_list_content
-            %h1
-              %span
-                シンプル
-              で使いやすい
-            %p
-              めんどくさい入力はなく、検索も購入もスムーズ！
+      %li.main_reason_list  
+        .main_reason_list_img
+          .main_reason_list_img_num 
+            2
+          = image_tag '/material/pict/pict-reason-02.jpg', class: "main_reason_list_img"
+        .main_reason_list_content
+          %h1
+            %span
+              シンプル
+            で使いやすい
+          %p
+            めんどくさい入力はなく、検索も購入もスムーズ！
 
-        %li.main_reason_list
-          .main_reason_list_img
-            .main_reason_list_img_num
-              3
-            = image_tag '/material/pict/pict-reason-03.jpg', class: "main_reason_list_img"
-          .main_reason_list_content
-            %h1
-              手数料
-              %span
-                業界最安
-            %p
-              最大３％でお得に出品＆購入！
+      %li.main_reason_list
+        .main_reason_list_img
+          .main_reason_list_img_num
+            3
+          = image_tag '/material/pict/pict-reason-03.jpg', class: "main_reason_list_img"
+        .main_reason_list_content
+          %h1
+            手数料
+            %span
+              業界最安
+          %p
+            最大３％でお得に出品＆購入！
 
   .main_middle
     .main_middle_img
