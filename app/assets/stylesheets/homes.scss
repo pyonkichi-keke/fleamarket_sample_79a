@@ -33,8 +33,26 @@
       &_category{
         color: black;
         font-size: 13px;
-        &:hover{
+        &:hover {
           color: rgb(221, 107, 41);
+        }
+        &:hover > &_lists{
+          display: block;
+        }
+        &_lists{
+          display: none;
+          color: black;
+          background-color: white;
+          position: absolute;
+          left: 260px;
+          top: 100px;
+          z-index: 10;
+          &_name{
+            margin-top: 8px;
+            border-bottom: 1px solid rgba($color: #524f4f, $alpha: 0.1);
+            font-size: 15px;
+            padding: 0 5px;
+          }
         }
       }
       &_brand{
@@ -95,15 +113,25 @@
   }
 
   &_reason{
+    position: relative;
     &_title{
       text-align: center;
       font-size: 25px;
       font-weight: bold;
       margin: 40px 0 ;
-      
+      &::after{
+        content: "";
+        bottom: 480px;
+        left: 50%;
+        transform: translate(-50%);
+        height: 5px;
+        width: 80px;
+        background-color: rgb(39, 228, 203);
+        position: absolute;
+      }
     }
     &_lists{
-      margin-top: 40px;
+      margin-top: 60px;
       display: flex;
       justify-content: space-around;
       list-style: none;
@@ -124,7 +152,9 @@
           width: 55px;
           z-index: 10;
           color: white;
-          padding: 7px 0 0 0;
+          text-align: center;
+          padding-top: 7px;
+          font-weight: bold;
         }
       }
       &_content{
@@ -146,6 +176,7 @@
   }
 
   &_middle{
+    margin-top: 50px;
     &_img{
       width: 100%;
       height: 400px;
@@ -168,11 +199,23 @@
   }
 
   &_chara{
+    position: relative;
     &_title{
       text-align: center;
       font-size: 25px;
       font-weight: bold;
       margin: 40px 0 ;
+      &::after{
+        content: "";
+        bottom: 560px;
+        left: 50%;
+        transform: translate(-50%);
+        height: 5px;
+        width: 80px;
+        background-color: rgb(39, 228, 203);
+        position: absolute;
+        
+      }
     }
     &_lists{
       display: flex;
@@ -316,3 +359,4 @@
     }
   }
 }
+
