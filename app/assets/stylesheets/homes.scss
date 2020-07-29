@@ -1,0 +1,318 @@
+.header{
+  width: 100vw;
+  &_search{
+    display: flex;
+    justify-content: center;
+    &_logo{
+      height: 60px;
+      width: 170px;
+    }
+    &_form{
+      display: flex;
+      &_submit{
+        height: 40px;
+        width: 40px;
+        background-color: rgb(39, 228, 203);
+        text-align: center;
+        padding-top: 5px;
+        &_icon{
+          height: 30px;
+          width: 30px;
+          color: white;
+        }
+      }
+    }
+  }
+
+  &_link{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    &_left{
+      display: flex;
+      &_category{
+        color: black;
+        font-size: 13px;
+        &:hover{
+          color: rgb(221, 107, 41);
+        }
+      }
+      &_brand{
+        color: black;
+        font-size: 13px;
+        margin-left: 50px;
+      }
+    }
+    &_right{
+      display: flex;
+      width: 200px;
+      &_login{
+        text-decoration: none;
+        color: black;
+        font-size: 13px;
+      }
+      &_signup{
+        text-decoration: none;
+        color: black;
+        font-size: 13px;
+        margin-left: 20px;
+      }
+      &_logout{
+        text-decoration: none;
+        color: black;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.main{
+  width: 100vw;
+  &_top{
+    position: relative;
+    &_img{
+      width: 100%;
+      height: 500px;
+    }
+    &_title{
+      position: absolute;
+      color: white;
+      display: block;
+      top: 35%;
+      left: 50px;
+      font-family: 'Noto Serif JP', serif;
+      h1{
+        font-size: 55px;
+        text-shadow: 0 0 4px gray;
+      }
+      p{
+        font-size: 20px;
+        text-shadow: black;
+        text-shadow: 0 0 4px gray;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &_reason{
+    &_title{
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+      margin: 40px 0 ;
+      
+    }
+    &_lists{
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+    }
+    &_list{
+      width: 300px;
+      &_img{
+        height: 300px;
+        width: 300px;
+        position: relative;
+        &_num{
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: rgb(39, 228, 203);
+          font-size: 25px;
+          height: 55px;
+          width: 55px;
+          z-index: 10;
+          color: white;
+          padding: 7px 0 0 0;
+        }
+      }
+      &_content{
+        text-align: center;
+        h1{
+          font-size: 25px;
+          padding: 20px;
+        }
+        p{
+          font-size: 20px;
+          text-align: start;
+          font-weight: 100;
+        }
+        span{
+          color:  rgb(39, 228, 203);
+        }
+      }
+    }
+  }
+
+  &_middle{
+    &_img{
+      width: 100%;
+      height: 400px;
+      position: relative;
+      &_content{
+        position: absolute;
+        top: 100px;
+        left: 200px;
+        color: white;
+        text-shadow: 0 0 4px gray;
+        h1{
+          font-size: 30px;
+        }
+        p{
+          font-size: 15px;
+          padding-top: 20px;
+        }
+      }
+    }
+  }
+
+  &_chara{
+    &_title{
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+      margin: 40px 0 ;
+    }
+    &_lists{
+      display: flex;
+      justify-content: space-around;
+    }
+    &_list{
+      width: 320px;
+      &_img{
+        height: 400px;
+        width: 300px;
+      }
+      &_content{
+        h1{
+          text-align: center;
+          font-size: 20px;
+          padding: 40px 0 20px 0;
+        }
+        p{
+          font-size: 15px;
+          text-align: start;
+          font-weight: 100;
+        }
+      }
+    }
+  }
+
+  &_pickup{
+    background-color: rgb(243, 240, 240);
+    margin-top: 100px;
+    &_category,&_brand{
+      text-align: center;
+      h1{
+        font-weight: bold;
+        font-size: 25px;
+        padding-top: 80px;
+      }
+      p{
+        font-weight: bold;
+        font-size: 25px;
+        color:  rgb(39, 228, 203);
+      }
+      &_lists{
+        display: flex;
+        justify-content: center;
+      }
+      &_list{
+        &_img{
+          height: 150px;
+          width: 170px;
+        }
+        &_name{
+          background-color: white;
+        }
+        &_option{
+          display: flex;
+          justify-content: space-between;
+          background-color: white;
+        }
+      }
+    }
+  }
+
+  &_footer{
+    margin-top: 80px;
+    &_img{
+      width: 100%;
+      height: 350px;
+      position: relative;
+      &_content{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%);
+        text-align: center;
+        color: white;
+        text-shadow: 0 0 4px gray;
+        h1{
+          font-size: 25px;
+        }
+        p{
+          font-size: 35px;
+        }
+      }
+    }
+  }
+}
+
+.footer{
+  background-color: rgb(51, 49, 49);
+  height: 440px;
+  position: relative;
+  &_lists{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: auto;
+  }
+  &_list{
+    color: white;
+    padding-top: 80px;
+    &_title{
+      font-weight: bold;
+      text-align: center;
+    }
+    &_contents{
+      list-style: none;
+      text-align: center;
+      font-size: 12px;
+      padding-top: 15px;
+      li{
+        padding-top: 20px;
+      }
+    }
+  }
+  &_img{
+    height: 70px;
+    width: 150px;
+    margin: auto;
+    padding-top: 20px;
+    &_content{
+      color: white;
+      text-align: center;
+    }
+  }
+  &_camera{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    height: 130px;
+    width: 130px;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    border-radius: 5px;
+    background-color:  rgb(39, 228, 203);
+    padding: 15px;
+    position: fixed;
+    &_icon{
+      height: 70px;
+      width: 70px;
+    }
+  }
+}
