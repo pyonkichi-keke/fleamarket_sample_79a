@@ -1,4 +1,8 @@
 class Product < ApplicationRecord
-  # has_one_attached :image
+
   has_many :images, dependent: :destroy
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :category
+
 end
