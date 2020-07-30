@@ -1,0 +1,16 @@
+.new_user{
+  text-align: center;
+  &_icon{
+    height: 70px;
+    margin: 15px;
+  }
+  &_title{
+    font-size: 40px;
+    letter-spacing: 10px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+  }
+
+  &_form{
+    
+  }
+}

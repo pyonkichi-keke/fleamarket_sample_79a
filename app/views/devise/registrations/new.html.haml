@@ -1,45 +1,51 @@
-%h2 ユーザー情報登録
-= form_for(@user, url: user_registration_path) do |f|
-  = render "devise/shared/error_messages", resource: @user
-  .field
-    = f.label :ニックネーム
-    %br/
-    = f.text_field :nickname
-  .field
-    = f.label :苗字（ふりがな）
-    %br/
-    = f.text_field :last_name_kana
-  .field
-    = f.label :苗字 
-    %br/
-    = f.text_field :last_name
-  .field
-    = f.label :名前（ふりがな）
-    %br/
-    = f.text_field  :first_name_kana
-  .field
-    = f.label :名前
-    %br/
-    = f.text_field :first_name
-  .field
-    = f.label :生年月日
-    %br/
-    = f.text_field :birthday
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} 文字以上)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password（確認用）
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Next"
-= render "devise/shared/links"
+.new_user
+  .new_user_icon
+    = image_tag "/material/logo/logo.png", class: "new_user_icon"
+  .new_user_title
+    新規ユーザー登録
+
+  .new_user_form
+    = form_for(@user, url: user_registration_path) do |f|
+      = render "devise/shared/error_messages", resource: @user
+      .field
+        = f.label :ニックネーム
+        %br/
+        = f.text_field :nickname
+      .field
+        = f.label :苗字（ふりがな）
+        %br/
+        = f.text_field :last_name_kana
+      .field
+        = f.label :苗字 
+        %br/
+        = f.text_field :last_name
+      .field
+        = f.label :名前（ふりがな）
+        %br/
+        = f.text_field  :first_name_kana
+      .field
+        = f.label :名前
+        %br/
+        = f.text_field :first_name
+      .field
+        = f.label :生年月日
+        %br/
+        = f.text_field :birthday
+      .field
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      .field
+        = f.label :password
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} 文字以上)
+        %br/
+        = f.password_field :password, autocomplete: "new-password"
+      .field
+        = f.label :password（確認用）
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+      .actions
+        = f.submit "Next"
+    = render "devise/shared/links"
