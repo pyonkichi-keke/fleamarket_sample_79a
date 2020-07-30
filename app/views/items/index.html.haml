@@ -1,6 +1,7 @@
-%h1 Items#index
-%p Find me in app/views/items/index.html.erb
+- @products.each do |product|
+  = product.name
+  = product.price
+  -# = image_tag product.images[0].image.url
 
-
-= link_to new_user_registration_path do
-  リンク
+- @images.each do |image|
+  = image.image
