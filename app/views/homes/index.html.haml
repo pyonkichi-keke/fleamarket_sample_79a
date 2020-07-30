@@ -40,6 +40,12 @@
 .main
   .main_top
     =image_tag '/material/pict/bg-mainVisual-pict_pc.jpg', class: "main_top_img"
+    .main_top_appstore
+      = image_tag "/material/icon/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "main_top_appstore_img"
+    .main_top_google
+      = image_tag "/material/icon/google-play-badge.png", class: "main_top_google_img"
+
+
 
     .main_top_title
       %h1
@@ -95,7 +101,7 @@
 
   .main_middle
     .main_middle_img
-      =image_tag "/material/pict/bg-topMiddleDl-pict.jpg", class: "main_middle_img"
+      =image_tag "/material/pict/bg-topMiddleDl-pict.jpg", class: "main_middle_img"  
       .main_middle_img_content
         %h1
           会員数日本一位
@@ -105,6 +111,10 @@
           出品・購入回数も業界最多です！
           %br/
           ほしかったあの商品に出会えるかもしれません。
+    .main_middle_appstore
+      = image_tag "/material/icon/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "main_middle_appstore_img"
+    .main_middle_google
+      = image_tag "/material/icon/google-play-badge.png", class: "main_middle_google_img"
 
   
   .main_chara
@@ -188,6 +198,11 @@
             だれでもかんたん、人生を変えるフリマアプリ
           %p
             今すぐ無料ダウンロード！
+      .main_footer_icon
+        .main_footer_icon_appstore
+          = image_tag "/material/icon/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "main_footer_icon_appstore_img"
+        .main_footer_icon_google
+          = image_tag "/material/icon/google-play-badge.png", class: "main_footer_icon_google_img"
 
 .footer
   .footer_lists

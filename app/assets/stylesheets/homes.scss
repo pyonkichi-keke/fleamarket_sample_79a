@@ -92,6 +92,24 @@
       width: 100%;
       height: 500px;
     }
+    &_appstore{
+      position: absolute;
+      bottom: 80px;
+      left: 80px;
+      &_img{
+        height: 70px;
+        width: 150px;
+      }
+    }
+    &_google{
+      position: absolute;
+      bottom: 77px;
+      left: 250px;
+      &_img{
+        height: 75px;
+        width: 180px;
+      }
+    }
     &_title{
       position: absolute;
       color: white;
@@ -177,6 +195,7 @@
 
   &_middle{
     margin-top: 50px;
+    position: relative;
     &_img{
       width: 100%;
       height: 400px;
@@ -194,6 +213,24 @@
           font-size: 15px;
           padding-top: 20px;
         }
+      }
+    }
+    &_appstore{
+      position: absolute;
+      bottom: 55px;
+      left: 190px;
+      &_img{
+        height: 70px;
+        width: 150px;
+      }
+    }
+    &_google{
+      position: absolute;
+      bottom: 52px;
+      left: 360px;
+      &_img{
+        height: 75px;
+        width: 180px;
       }
     }
   }
@@ -280,13 +317,14 @@
 
   &_footer{
     margin-top: 80px;
+    position: relative;
     &_img{
       width: 100%;
       height: 350px;
       position: relative;
       &_content{
         position: absolute;
-        top: 40%;
+        top: 30%;
         left: 50%;
         transform: translate(-50%);
         text-align: center;
@@ -297,6 +335,28 @@
         }
         p{
           font-size: 35px;
+        }
+      }
+    }
+    &_icon{
+      display: flex;
+      justify-content: center;
+      &_appstore{
+        position: absolute;
+        bottom: 55px;
+        left: 35%;
+        &_img{
+          height: 70px;
+          width: 150px;
+        }
+      }
+      &_google{
+        position: absolute;
+        bottom: 52px;
+        left: 53%;
+        &_img{
+          height: 75px;
+          width: 180px;
         }
       }
     }
