@@ -14,6 +14,6 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.references :buy_user, foreign_key: { to_table: :users }
       t.integer :category_id, null:false
       t.timestamps
-    end    
+    end
   end
 end
