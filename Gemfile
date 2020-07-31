@@ -81,5 +81,7 @@ gem 'pry-rails'
 gem 'carrierwave'
 gem 'fog-aws'
 
+gem 'rails-i18n'
 
-
+gem 'devise-i18n'
+gem 'devise-i18n-views'
