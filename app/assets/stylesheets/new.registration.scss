@@ -4,6 +4,7 @@
     height: 70px;
     margin: 15px;
   }
+
   &_title{
     font-size: 40px;
     letter-spacing: 10px;
@@ -11,6 +12,58 @@
   }
 
   &_form{
-    
+    font-family: 'M PLUS Rounded 1c', sans-serif;
   }
+}
+
+.label-nickname {
+  margin-right: 148px;
+}
+
+.label-familyname-kana {
+  margin-right: 115px;
+}
+
+.label-familyname-kanzi {
+  margin-right: 215px;
+}
+
+.label-firstname-kana {
+  margin-right: 115px;
+}
+
+.label-firstname-kanzi {
+  margin-right: 213px;
+}
+
+.birthday {
+  margin-right: 180px;
+}
+
+.email {
+  margin-right: 130px;
+}
+
+.password {
+  margin-right: 57px;
+}
+
+.password-confirmation {
+  margin-right: 88px;
+}
+
+.size {
+  border: 1px solid black;
+  margin-bottom: 15px;
+  width: 300px;
+  height: 30px;
+}
+
+.requir {
+  color: white;
+  background-color: #5dfaff;
+  padding: 4px 10px;
+  border-radius: 3px;
+  display: inline-block;
+  // text-align: left;
 }
