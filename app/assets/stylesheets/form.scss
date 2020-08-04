@@ -42,7 +42,6 @@
 
 .image_box{
   display: flex;
-  // padding-left: 10px;
 }
 
 .previews{
@@ -53,7 +52,6 @@
 .form{
   display: flex;
 }
-
 
 .hidden{
   display: none;
@@ -67,15 +65,12 @@
 }
 
 .file_field_group{
-  margin: 20px 12px 20px 0;
+  margin: 20px 12px 0 0;
 }
-
-
 
 .product_img{
   margin: 10px 8px 10px 8px;
 }
-
 
 .remove{
   background-color: rgb(39, 228, 203);
@@ -103,13 +98,6 @@ textarea{
   border: 1px solid #bdb4b4;
   border-radius: 5px;
 }
-
-
-
-
-
-
-
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {

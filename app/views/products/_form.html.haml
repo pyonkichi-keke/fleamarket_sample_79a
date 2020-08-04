@@ -30,8 +30,8 @@
               = file_field_tag :image, name: "product[images_attributes][#{product.images.count}][image]", class: "hidden"
           .remove
             削除
-    .product_fields  
 
+    .product_fields  
       .product_field
         = f.label :name, :商品名
         = f.text_field :name, placeholder: "name"
