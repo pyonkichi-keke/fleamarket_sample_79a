@@ -413,6 +413,10 @@
     background-color:  rgb(39, 228, 203);
     padding: 15px;
     position: fixed;
+    &_link{
+      text-decoration: none;
+      color: white;
+    }
     &_icon{
       height: 70px;
       width: 70px;
