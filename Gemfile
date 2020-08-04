@@ -78,5 +78,6 @@ gem 'fog-aws'
 gem 'jquery-rails'
 gem 'mini_magick'
 gem 'font-awesome-rails'
-
-
+gem 'rails-i18n'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
