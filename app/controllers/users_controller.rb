@@ -2,17 +2,14 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def show
-    @user = User.find(params[:id])
     @categories = Category.all
   end
 
   def edit
-    @user = User.find(params[:id])
     @categories = Category.all
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "ユーザー情報の更新が完了しました！"
       # session[:user_id] = @user.id unless current_user

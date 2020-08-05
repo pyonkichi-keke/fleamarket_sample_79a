@@ -2,16 +2,13 @@ class AddressesController < ApplicationController
   before_action :set_address, only: [:show, :edit, :update, :destroy]
 
   def show
-    @address = Address.find(params[:id])
   end
 
   def edit
-    @address = Address.find(params[:id])
     @categories = Category.all
   end
 
   def update
-    @address = Address.find(params[:id])
     if @address.update(address_params)
       flash[:notice] = "配送情報の更新が完了しました！"
       redirect_to user_path(current_user.id)
