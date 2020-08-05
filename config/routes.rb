@@ -9,14 +9,14 @@ Rails.application.routes.draw do
   end
 
   root 'homes#index'
-  
+
   resources :items, only: :index
 
   resources :users, only: [:show, :edit, :update, :destroy]
 
   resources :cards, only: [:new, :show]
 
-  # patch '/addresses/:id', to: 'addresses#update'
+
 
   resources :addresses, only: [:new, :create, :edit, :update]
 
