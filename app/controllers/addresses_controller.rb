@@ -1,4 +1,6 @@
 class AddressesController < ApplicationController
+  before_action :set_address, only: [:show, :edit, :update, :destroy]
+
   def show
     @address = Address.find(params[:id])
   end
@@ -20,6 +22,10 @@ class AddressesController < ApplicationController
   end
 
   private
+  def set_address
+    @address = Address.find(params[:id])
+  end
+
   def address_params
     params.require(:address).permit(
       :postal_code,

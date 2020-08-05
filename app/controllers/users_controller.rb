@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+
   def show
     @user = User.find(params[:id])
     @categories = Category.all
@@ -23,6 +25,10 @@ class UsersController < ApplicationController
   end
 
   private
+  def set_user
+    @user = User.find(params[:id])
+  end
+
   def user_params
     params.require(:user).permit(
       :family_name,

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
 
-  root 'homes#index'
+  # root 'homes#index'
 
   resources :items, only: :index
 
@@ -23,5 +23,7 @@ Rails.application.routes.draw do
 
 
   resources :products
+
+  root 'products#index'
 
 end
