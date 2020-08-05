@@ -25,6 +25,13 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.update(product_params)
   end
+
+  def search
+    @products = Product.search(params[:keyword])
+    respond_to do |format|
+      format.json
+    end
+  end
   
   private
   def product_params

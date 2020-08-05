@@ -3,12 +3,22 @@
   &_search{
     display: flex;
     justify-content: center;
+    padding: 15px 0;
     &_logo{
-      height: 60px;
-      width: 170px;
+      height: 50px;
+      width: 180px;
+      margin-right: 30px;
     }
     &_form{
       display: flex;
+      align-items: center;
+      &_text{
+        width: 500px;
+        height: 40px;
+        padding-left: 5px;
+        border: 1px solid #bdb4b4;
+        border-radius: 5px;
+      }
       &_submit{
         height: 40px;
         width: 40px;
