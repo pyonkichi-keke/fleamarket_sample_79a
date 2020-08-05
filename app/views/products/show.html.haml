@@ -1,0 +1,4 @@
+- @product.images.each do |image|
+  = image_tag image.image.url
+= link_to edit_product_path(@product.id) do
+  編集

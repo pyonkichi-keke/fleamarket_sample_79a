@@ -158,18 +158,21 @@
       %p
         新規投稿商品
       .main_pickup_category_lists
-        .main_pickup_category_list
-          .main_pickup_category_list_img
-            =image_tag "/material/icon/icon-01.png", class: "main_pickup_category_list_img"
-          .main_pickup_category_list_name
-            test
-          .main_pickup_category_list_option
-            .main_pickup_category_list_option_prace
-              100円
-              %br/
-              (税込)
-            .main_pickup_category_list_option_likes
-              ⭐︎
+        - @products.each do |product|
+          .main_pickup_category_list
+            = link_to product_path(product.id) do
+              .main_pickup_category_list_img
+                = image_tag product.images.first.image.url, class: "main_pickup_category_list_img"
+              .main_pickup_category_list_name
+                = product.name
+              .main_pickup_category_list_option
+                .main_pickup_category_list_option_price
+                  = product.price
+                  円
+                  %span
+                    (税込)
+                .main_pickup_category_list_option_likes
+                  ❤️10
         
     
     .main_pickup_brand
@@ -178,18 +181,21 @@
       %p
         アーカイバ
       .main_pickup_brand_lists
-        .main_pickup_brand_list
-          .main_pickup_brand_list_img
-            =image_tag "/material/icon/icon-01.png", class: "main_pickup_brand_list_img"
-          .main_pickup_brand_list_name
-            test
-          .main_pickup_brand_list_option
-            .main_pickup_brand_list_option_prace
-              100円
-              %br/
-              (税込)
-            .main_pickup_brand_list_option_likes
-              ⭐︎
+        - @products.each do |product|
+          .main_pickup_brand_list
+            = link_to product_path(product.id) do
+              .main_pickup_brand_list_img
+                =image_tag product.images.first.image.url, class: "main_pickup_brand_list_img"
+              .main_pickup_brand_list_name
+                = product.name
+              .main_pickup_brand_list_option
+                .main_pickup_brand_list_option_price
+                  = product.price
+                  円
+                  %span
+                    (税込)
+                .main_pickup_brand_list_option_likes
+                  ❤️10
 
     .main_footer
       .main_footer_img
@@ -246,17 +252,7 @@
       &copy;FURIMA
   
   .footer_camera
-    出品する
-    = image_tag "/material/icon/icon_camera.png", class: "footer_camera_icon"
-      
-
-      
-
-      
-
-
-
-
-
-
+    = link_to new_product_path, class: "footer_camera_link" do
+      出品する
+      = image_tag "/material/icon/icon_camera.png", class: "footer_camera_icon"
 
