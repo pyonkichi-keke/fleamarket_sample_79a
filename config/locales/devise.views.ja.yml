@@ -21,6 +21,23 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "ログインを記憶"
+        nickname: "ニックネーム"
+        first_name: "名前"
+        last_name: "名字"
+        first_name_kana: "名前（ふりがな）"
+        last_name_kana: "名字（ふりがな）"
+        birthday: "誕生日"
+      address:
+        postal_code: "郵便番号"
+        prefecture_id: "都道府県名"
+        city: "市町村名"
+        address: "住所"
+        apartment: "建物名"
+        first_name: "名前"
+        last_name: "名字"
+        first_name_kana: "名前（ふりがな）"
+        last_name_kana: "名字（ふりがな）"
+        tel: "電話番号"
     models:
       user: "ユーザ"
   devise:

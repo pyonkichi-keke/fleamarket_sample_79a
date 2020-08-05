@@ -1,0 +1,49 @@
+.header
+  .header_search
+    .header_search_logo
+      = image_tag '/material/logo/logo.png', class: "header_search_logo"
+    .header_search_form
+      aaaaaaaaaaaaaaaaaaaaaaa
+      .header_search_form_submit
+        = image_tag "/material/icon/icon-search 1.png", class: "header_search_form_submit_icon"
+  .header_link
+    .header_link_left
+      .header_link_left_category
+        カテゴリー
+        .header_link_left_category_lists
+          - @categories.each do |category|
+            .header_link_left_category_lists_name
+              = category.name
+              %br/
+      .header_link_left_brand
+        ブランド
+    .header_link_right
+      - if user_signed_in?
+        .header_link_right_logout
+          = link_to "#{current_user.nickname}さん", "/users/#{current_user.id}"
+          = link_to destroy_user_session_path, method: :delete, class: "header_link_right_logout" do
+            ログアウト
+      - else
+        .header_link_right_login
+          = link_to new_user_session_path, class: "header_link_right_login" do
+            ログイン
+        .header_link_right_signup
+          = link_to new_user_registration_path, class: "header_link_right_signup" do
+            新規会員登録
+
+.card
+  .card__number
+    .card__number--title
+      %label カード番号
+    .card__number--input
+      = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+  .card__expiration
+    .card__expiration--title
+      %label 有効期限
+    .card__expiration--input
+      = text_field_tag "number", "", class: "number", placeholder: "例)◯月◯日" ,maxlength: "16", type: "text", id: "card_number"
+  .card__security
+    .card__security--title
+      %label セキュリティコード
+    .card__security--input
+      = text_field_tag "number", "", class: "number", placeholder: "例)123" ,maxlength: "16", type: "text", id: "card_number"
