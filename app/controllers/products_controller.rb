@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.includes(:images).order('created_at DESC')
+    @categories = Category.all
+    @products = Product.includes(:images).order('created_at DESC').limit(4)
   end
 
   def new
@@ -27,6 +28,6 @@ class ProductsController < ApplicationController
   
   private
   def product_params
-    params.require(:product).permit(:name, :price, :text, :status_id, :size_id, :prefecture_id, :delivery_id, :delivery_time_id, :brand_id, :category_id, images_attributes:  [:image, :_destroy, :id]).merge(user_id: current_user.id, buy_user_id: current_user.id )
+    params.require(:product).permit(:name, :price, :text, :status_id, :size_id, :prefecture_id, :delivery_id, :deliverytime_id, :brand_id, :category_id, images_attributes:  [:image, :_destroy, :id]).merge(user_id: current_user.id, buy_user_id: current_user.id )
   end
 end
