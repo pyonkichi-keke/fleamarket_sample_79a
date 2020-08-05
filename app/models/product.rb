@@ -13,8 +13,7 @@ class Product < ApplicationRecord
   belongs_to_active_hash :status
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :size
-  belongs_to_active_hash :delivery_time
-  belongs_to_active_hash :time
-
+  belongs_to_active_hash :deliverytime
+  belongs_to_active_hash :delivery
 
 end

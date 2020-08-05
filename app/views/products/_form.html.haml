@@ -66,8 +66,8 @@
         = fa_icon 'chevron-down', class: "product_field_icon"
       
       .product_field
-        = f.label :delivery_time_id, :発送日時
-        = f.collection_select :delivery_time_id, Delivery_time.all, :id, :name
+        = f.label :deliverytime_id, :発送日時
+        = f.collection_select :deliverytime_id, Deliverytime.all, :id, :name
         = fa_icon 'chevron-down', class: "product_field_icon"
       
       .product_field

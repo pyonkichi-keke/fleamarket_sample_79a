@@ -1,0 +1,93 @@
+.header
+  .header_search
+    .header_search_logo
+      = image_tag '/material/logo/logo.png', class: "header_search_logo"
+    .header_search_form
+      aaaaaaaaaaaaaaaaaaaaaaa
+      .header_search_form_submit
+        = image_tag "/material/icon/icon-search 1.png", class: "header_search_form_submit_icon"
+  .header_link
+    .header_link_left
+      .header_link_left_category
+        カテゴリー
+        .header_link_left_category_lists
+          - @categories.each do |category|
+            .header_link_left_category_lists_name
+              = category.name
+              %br/
+      .header_link_left_brand
+        ブランド
+    .header_link_right
+      - if user_signed_in?
+        .header_link_right_logout
+          = link_to "#{current_user.nickname}さん", "/users/#{current_user.id}"
+          = link_to destroy_user_session_path, method: :delete, class: "header_link_right_logout" do
+            ログアウト
+      - else
+        .header_link_right_login
+          = link_to new_user_session_path, class: "header_link_right_login" do
+            ログイン
+        .header_link_right_signup
+          = link_to new_user_registration_path, class: "header_link_right_signup" do
+            新規会員登録
+
+
+
+.user_show
+  .user_show__nickname
+    .user_show__nickname--title
+      ニックネーム
+    .user_show__nickname--content
+      = @user.nickname
+    -# .user_show__introduction
+    -#   .user_show__introduction--title
+
+    -#   .user_show__introduction--content
+    -#     = @user.introdaction
+
+  .user_show__first_name
+    .user_show__first_name--title
+      名前
+    .user_show__first_name--content
+      = @user.first_name
+
+  .user_show__last_name
+    .user_show__last_name--title
+      名字
+    .user_show__last_name--content
+      = @user.last_name
+
+
+  .user_show__first_name_kana
+    .user_show__first_name_kana--title
+      名前（カナ）
+    .user_show__first_name_kana--content
+    = @user.first_name_kana
+
+
+  .user_show__last_name_kana
+    .user_show__last_name_kana--title
+      名字（カナ）
+    .user_show__last_name_kana--content
+      = @user.last_name_kana
+
+  .user_show__birthday
+    .user_show__birthday--title
+      誕生日
+    .user_show__birthday--content
+      = @user.birthday
+
+
+.user_show__devise--edit
+  - if user_signed_in?
+    = link_to"ユーザー情報変更", edit_user_path
+
+.user_show__devise--address
+  - if user_signed_in?
+    = link_to "配送先住所編集", edit_address_path
+    -# = link_to "配送先住所編集", edit_destination_path(@destination.id)
+
+
+.user_show__devise--credit_card
+  - if user_signed_in?
+    = link_to "クレジットカード情報", new_card_path

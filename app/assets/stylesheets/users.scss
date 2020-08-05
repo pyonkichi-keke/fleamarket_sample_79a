@@ -1,0 +1,66 @@
+// マイページ
+.user_show {
+  text-align: center;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  &__nickname {
+    padding: 5px;
+  }
+  &__first_name {
+    padding: 5px;
+  }
+  &__last_name {
+    padding: 5px;
+  }
+  &__first_name_kana {
+    padding: 5px;
+  }
+  &__last_name_kana {
+    padding: 5px;
+  }
+  &__birthday {
+    padding: 5px;
+  }
+}
+
+.user_show__devise--edit {
+  text-align: center;
+}
+
+.user_show__devise--address {
+  text-align: center;
+  margin: 10px;
+}
+
+.user_show__devise--credit_card {
+  text-align: center;
+}
+
+// マイページ編集
+.edit {
+  text-align: center;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.nickname_size {
+  margin-right: 62px;
+}
+
+.last_name_kana_size {
+  margin-right: 95px;
+}
+
+.first_name_kana_size {
+  margin-right: 95px;
+}
+
+.birthday_size {
+  margin-right: 30px;
+}
+
+.email_size {
+  margin-right: 80px;
+}
+
+.password_size {
+  margin-right: 47px;
+}
