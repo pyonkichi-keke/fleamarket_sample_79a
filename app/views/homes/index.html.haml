@@ -3,10 +3,13 @@
     .header_search_logo
       = image_tag '/material/logo/logo.png', class: "header_search_logo"
     .header_search_form
-      aaaaaaaaaaaaaaaaaaaaaaa
-      .header_search_form_submit
-        = image_tag "/material/icon/icon-search 1.png", class: "header_search_form_submit_icon"
-      
+      = form_with url: 'search_products_path', local: true, class:"header_search_form" do |f|
+        = f.text_field :keyword, class: "header_search_form_text", placeholder: "商品を探す"
+        = f.label :submit do
+          = f.submit class: "hidden"
+          .header_search_form_submit
+            = image_tag "/material/icon/icon-search 1.png", class: "header_search_form_submit_icon"
+        
 
   .header_link
     .header_link_left

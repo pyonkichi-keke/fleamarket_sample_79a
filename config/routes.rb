@@ -9,5 +9,10 @@ Rails.application.routes.draw do
 
   root 'homes#index'
   
-  resources :products
+  resources :products do
+    collection do
+      get 'search'
+    end
+  end
+  
 end
