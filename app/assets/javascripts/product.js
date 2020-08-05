@@ -74,6 +74,12 @@ $(document).on('turbolinks:load', ()=> {
       $('.image_box').append(buildFileField(fileIndex[0]));
     }
   });
+ 
+  $('.product_show').on('click', '.product_show_image', function(){
+    $('.active').removeClass('active')
+    $(this).addClass('active')
+    $(this).prependTo('.product_show_images') 
+  });
 
 
 });
