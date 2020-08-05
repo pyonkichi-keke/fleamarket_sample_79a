@@ -23,6 +23,7 @@
     .header_link_right
       - if user_signed_in?
         .header_link_right_logout
+          = link_to "#{current_user.nickname}さん", "/users/#{current_user.id}"
           = link_to destroy_user_session_path, method: :delete, class: "header_link_right_logout" do
             ログアウト
       - else

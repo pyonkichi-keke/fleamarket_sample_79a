@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations'
+    # registrations: 'registrations'
   }
   devise_scope :user do
     get 'addresses', to: 'users/registrations#new_address'
@@ -10,4 +11,13 @@ Rails.application.routes.draw do
   root 'homes#index'
   
   resources :items, only: :index
+
+  resources :users, only: [:show, :edit, :update, :destroy]
+
+  resources :cards, only: [:new, :show]
+
+  # patch '/addresses/:id', to: 'addresses#update'
+
+  resources :addresses, only: [:new, :create, :edit, :update]
+
 end

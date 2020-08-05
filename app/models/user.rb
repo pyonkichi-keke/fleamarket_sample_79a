@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          
+
+
       has_many :commnets
       has_many :products
       has_many :likes_product, through: :likes, source: :product
