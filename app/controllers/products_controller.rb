@@ -11,6 +11,8 @@ class ProductsController < ApplicationController
 
   def create
     Product.create(product_params)
+    redirect_to root_path
+    flash[:notice]= "商品を出品しました"
   end
 
   def show
@@ -25,14 +27,25 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     @product.update(product_params)
+    redirect_to root_path
+    flash[:notice]= "商品を編集しました"
   end
 
-  def search
-    @products = Product.search(params[:keyword])
-    respond_to do |format|
-      format.json
-    end
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to root_path
+    flash[:notice]= "商品を削除しました"
   end
+
+
+  # def search
+  #   @products = Product.search(params[:keyword])
+  #   respond_to do |format|
+  #     format.json
+  #   end
+  # end
+
   
   private
   def product_params
