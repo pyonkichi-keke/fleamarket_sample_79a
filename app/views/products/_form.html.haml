@@ -80,7 +80,13 @@
         = f.number_field :price, class: "number", placeholder:"￥"
       
       .product_field_submit
-        = f.submit :出品
+        - if product.persisted?
+          = f.submit :更新
+          .product_field_submit_delete
+            = link_to product_path(product.id), method: :delete, class: "product_field_submit_delete" do
+              削除
+        - else
+          = f.submit :出品
 
 
     
