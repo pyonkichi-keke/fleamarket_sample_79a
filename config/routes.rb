@@ -14,8 +14,7 @@ Rails.application.routes.draw do
 
   resources :cards, only: [:new, :show]
 
-
-
+  
   resources :addresses, only: [:new, :create, :edit, :update]
 
 

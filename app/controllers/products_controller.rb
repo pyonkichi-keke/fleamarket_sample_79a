@@ -39,6 +39,7 @@ class ProductsController < ApplicationController
   end
 
 
+
   # def search
   #   @products = Product.search(params[:keyword])
   #   respond_to do |format|
