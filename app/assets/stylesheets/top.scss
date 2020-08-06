@@ -89,6 +89,11 @@
         text-decoration: none;
         color: black;
         font-size: 13px;
+        margin-left: 30px;
+        &_name{
+          text-decoration: none;
+          color: black;
+        }
       }
     }
   }
@@ -319,16 +324,17 @@
           width: 190px;
         }
         &_name{
-          background-color: rgb(236, 250, 248);
+          background-color: white;
           padding-top: 7px;
-          font-family: 'Noto Serif JP', serif;
+          font-family: 'M PLUS Rounded 1c', sans-serif;
           font-size: 20px;
         }
         &_option{
           display: flex;
           justify-content: space-between;
-          background-color: rgb(236, 250, 248);
+          background-color: white;
           padding: 7px 0;
+          font-family: 'M PLUS Rounded 1c', sans-serif;
           &_price{
             padding-left: 3px;
             font-size: 16px;
@@ -454,3 +460,12 @@
   }
 }
 
+.notifications{
+  color: rgb(1, 241, 221);
+  text-align: center;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  letter-spacing: 3px;
+  span{
+    border-bottom: 1px solid rgb(1, 241, 221);
+  }
+}

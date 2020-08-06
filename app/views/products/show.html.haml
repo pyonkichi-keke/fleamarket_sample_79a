@@ -5,63 +5,62 @@
 
 .product
   .product_show
-    .product_show_images  
-      = image_tag @product.images[0].image.url, class: "product_show_image active"
-      - @product.images.each_with_index do |image, i|
-        = image_tag image.image.url, data: {active: i}, class: "product_show_image"
-    
-    %table{class: 'product_show_lists'}
-      %tr
-        %th.product_show_list_name
-          商品名
-        %td
-          = @product.name
-      %tr
-        %th.product_show_list_nickname
-          出品者
-        %td
-          = @user.nickname
-      %tr
-        %th.product_show_list_price
-          値段
-        %td
-          = @product.price
-      %tr
-        %th.product_show_list_category
-          カテゴリー
-        %td
-          = @product.category.name
-      %tr
-        %th.product_show_list_brand
-          ブランド
-        %td
-          = @product.brand.name
-      %tr
-        %th.product_show_list_size
-          サイズ
-        %td
-          = @product.size.name
-      %tr
-        %th.product_show_list_status
-          商品の状態
-        %td
-          = @product.status.name
-      %tr
-        %th.product_show_list_delivery
-          配送料の負担
-        %td
-          = @product.delivery.name
-      %tr
-        %th.product_show_list_prefecture
-          発送元の地域
-        %td
-          = @product.prefecture.name
-      %tr
-        %th.product_show_list_deliverytime
-          配送日時
-        %td
-          = @product.deliverytime.name       
-
+    .product_show_name
+      = @product.name
+    .product_show_main
+      .product_show_images  
+        = image_tag @product.images[0].image.url, class: "product_show_image active"
+        - @product.images.each_with_index do |image, i|
+          = image_tag image.image.url, data: {active: i}, class: "product_show_image"
+      
+      %table{class: 'product_show_lists'}
+        %tr
+          %th.product_show_list_nickname
+            出品者
+          %td
+            = @user.nickname
+        %tr
+          %th.product_show_list_category
+            カテゴリー
+          %td
+            = @product.category.name
+        %tr
+          %th.product_show_list_brand
+            ブランド
+          %td
+            = @product.brand.name
+        %tr
+          %th.product_show_list_size
+            サイズ
+          %td
+            = @product.size.name
+        %tr
+          %th.product_show_list_status
+            商品の状態
+          %td
+            = @product.status.name
+        %tr
+          %th.product_show_list_delivery
+            配送料の負担
+          %td
+            = @product.delivery.name
+        %tr
+          %th.product_show_list_prefecture
+            発送元の地域
+          %td
+            = @product.prefecture.name
+        %tr
+          %th.product_show_list_deliverytime
+            配送日時
+          %td
+            = @product.deliverytime.name       
+    .product_show_price
+      ￥
+      = @product.price
+      %span
+        (税込み)
+      .product_show_price_delivery
+        = @product.delivery.name
   .product_text
     .product_text_title
       %span
