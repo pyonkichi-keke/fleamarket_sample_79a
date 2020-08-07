@@ -13,7 +13,7 @@ CarrierWave.configure do |config|
       region: 'ap-northeast-1'
     }
     config.fog_directory  = 'furimaapp1123'
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/chat-space112233'
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/furimaapp1123'
   else
     config.storage = :file
   end
