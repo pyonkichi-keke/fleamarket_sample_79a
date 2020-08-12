@@ -15,5 +15,18 @@ class Product < ApplicationRecord
   belongs_to_active_hash :size
   belongs_to_active_hash :deliverytime
   belongs_to_active_hash :delivery
+  
+
+  validates :name, presence: true
+  validates :user_id, presence: true
+  validates :price, presence: true
+  validates :text, presence: true
+  validates :category_id, presence: true
+  validates :brand_id, presence: true
+  validates :status_id, presence: true
+  validates :prefecture_id, presence: true
+  validates :size_id, presence: true
+  validates :delivery_id, presence: true
+  validates :deliverytime_id, presence: true
 
 end

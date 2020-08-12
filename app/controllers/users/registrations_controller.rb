@@ -5,9 +5,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  def new
-    super
-  end
+  # def new
+  #   super
+  # end
 
   # POST /resource
   def create
@@ -28,9 +28,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    @user = User.find(params[:id])
+    if @user.update(account_update_params)
+      flash[:notice] = "ユーザー情報の更新が完了しました！"
+      sign_in(@user)
+      redirect_to user_path(current_user.id)
+    else
+      flash[:alert] = "入力に誤りがあります。もう一度入力してください。"
+      redirect_to edit_user_registration_path(current_user.id)
+    end
+  end
 
   # DELETE /resource
   # def destroy

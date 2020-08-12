@@ -4,7 +4,7 @@
 
 
 .session
-  .session_tilte ログイン
+  .session_title ログイン
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .field-session
       .session-email
@@ -16,12 +16,11 @@
       .session-password
         = f.label :パスワード
       %br/
-      = f.password_field :password, autocomplete: "current-password", class:"size"
-    - if devise_mapping.rememberable?
-      .field
-        = f.check_box :remember_me
-        = f.label :remember_me
-    .actions
-      = f.submit "ログイン", class:"size"
-  .session__signup
-    = render "devise/shared/links"
+      = f.password_field :password, class:"size"
+    .session_login
+      = f.submit "ログイン", class: "session_login_button"
+  
+  
+  .session_signup
+    = link_to new_user_registration_path, class: "session_signup_button" do
+      新規登録はこちら

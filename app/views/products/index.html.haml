@@ -179,6 +179,9 @@
                     (税込)
                 .main_pickup_category_list_option_likes
                   ❤️10
+              -if product.buy_user_id.present?
+                .sold_out
+                  sold out
         
     
     .main_pickup_brand
@@ -202,6 +205,9 @@
                     (税込)
                 .main_pickup_brand_list_option_likes
                   ❤️10
+              -if product.buy_user_id.present?
+                .sold_out
+                  sold out
 
     .main_footer
       .main_footer_img
