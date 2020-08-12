@@ -1,5 +1,11 @@
 .new_user_form{
   text-align: center;
+  &_title{
+    font-size: 40px;
+    letter-spacing: 10px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    margin-bottom: 40px;
+  }
 }
 
 .postalcode-label {
@@ -40,4 +46,15 @@
 
 .tel-label {
   padding-right: 180px;
+}
+
+.actions{
+  margin-top: 20px;
+  &_button{
+    background-color: rgb(39, 228, 203);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-size: 25px;
+  }
 }
