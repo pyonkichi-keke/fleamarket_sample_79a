@@ -65,6 +65,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.save
     session["devise.regist_data"]["user"].clear
     sign_in(:user, @user)
+    flash[:notice] = "新規登録が完了しました。"
     redirect_to root_path
   end
 
