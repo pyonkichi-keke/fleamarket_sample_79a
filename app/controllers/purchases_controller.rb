@@ -1,9 +1,9 @@
 class PurchasesController < ApplicationController
   require 'payjp'
 
-  def show
-    @product = Product.find_by(params[:id])
+  before_action :set_product, only: [:show, :pay]
 
+  def show
     if user_signed_in?
       card = CreditCard.where(user_id: current_user.id).first
       @user = User.find_by(id: current_user.id)
@@ -30,7 +30,6 @@ class PurchasesController < ApplicationController
 
   def pay
     card = CreditCard.where(user_id: current_user.id).first
-    @product = Product.find(params[:product_id])
     Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
     Payjp::Charge.create(
       amount: @product.price, # 決済する値段
@@ -46,6 +45,10 @@ class PurchasesController < ApplicationController
   private
   def purchase_params
     params.require(:product).merge(buy_user_id: current_user.id)
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 
 end

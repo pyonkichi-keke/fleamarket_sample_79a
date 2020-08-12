@@ -15,38 +15,39 @@
     .user_show_contents_list
       ニックネーム
       %div
-        = @user.nickname
+        = current_user.nickname
     .user_show_contents_list
       苗字（かな）
       %div
-        = @user.last_name_kana
+        = current_user.last_name_kana
     .user_show_contents_list
       苗字
       %div
-        = @user.last_name
+        = current_user.last_name
     .user_show_contents_list
       名前（かな）
       %div
-        = @user.first_name_kana
+        = current_user.first_name_kana
     .user_show_contents_list
       名前
       %div
-        = @user.first_name
+        = current_user.first_name
     .user_show_contents_list
       自己紹介
       %div
-        -if @user.introdaction.present?
-          = @user.introdaction
+        -if current_user.introdaction.present?
+          = current_user.introdaction
         -else
           まだ自己紹介文はありません  
     .user_show_contents_list
       生年月日
       %div
-        = @user.birthday
+        = current_user.birthday
+        
     .user_show_contents_list
       登録メールアドレス
       %div
-        = @user.email
+        = current_user.email
 
     .user_show_contents_list_card
       -if @card.present?

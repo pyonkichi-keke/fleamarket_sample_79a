@@ -11,7 +11,7 @@
   .address_edit_user
     ログインユーザー名
     %br/
-    = @user.nickname
+    = current_user.nickname
 
     = form_for @address do |f|
       .address_edit_forms
