@@ -28,6 +28,11 @@ class PurchasesController < ApplicationController
 
 
   def pay
+    if @product.buy_user_id.present?
+      flash[:alert] = "商品は既に購入されています"
+      redirect_to root_path and return
+    end
+    
     card = CreditCard.find_by(user_id: current_user.id)
     Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
     Payjp::Charge.create(
@@ -47,7 +52,7 @@ class PurchasesController < ApplicationController
   end
 
   def set_product
-    @product = Product.find(params[:id])
+    @product = Product.find(params[:product_id])
   end
 
 end

@@ -24,7 +24,7 @@
       .card_purchace_main_prefecture_content
         .card_purchace_main_prefecture_content_postal
           〒
-          = @user.address.postal_code
+          = current_user.address.postal_code
         .card_purchace_main_prefecture_content_address
           = current_user.address.prefecture.name
           = current_user.address.city
