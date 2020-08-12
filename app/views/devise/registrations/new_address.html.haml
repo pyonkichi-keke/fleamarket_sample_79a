@@ -1,10 +1,10 @@
 .new_user
   .new_user_icon
     = image_tag "/material/logo/logo.png", class: "new_user_icon"
-  .new_user_title
-    住所情報登録
 
 .new_user_form
+  .new_user_form_title
+    住所情報登録
   = form_for @address do |f|
     = render "devise/shared/error_messages", resource: @address
     .field
@@ -70,5 +70,4 @@
       = f.text_field :tel, placeholder:"例） 012-3456-7890", class:"size"
   
     .actions
-      = f.submit "登録", class:"size"
-  = render "devise/shared/links"
+      = f.submit "登録", class:"actions_button"
