@@ -2,9 +2,7 @@ class CreditCardsController < ApplicationController
   require 'payjp'
 
   def new
-    @user = User.find_by(id: current_user.id)
     card = CreditCard.find_by(user_id: current_user.id)
-
   end
 
   def create
@@ -26,7 +24,7 @@ class CreditCardsController < ApplicationController
   end
 
   def delete #PayjpとCardデータベースを削除します
-    card = CreditCard.find_by(user_id: current_user.id).first
+    card = CreditCard.find_by(user_id: current_user.id)
     if card.blank?
     else
       Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]

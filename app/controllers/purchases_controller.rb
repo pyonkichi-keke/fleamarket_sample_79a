@@ -5,8 +5,7 @@ class PurchasesController < ApplicationController
 
   def show
     if user_signed_in?
-      card = CreditCard.where(user_id: current_user.id).first
-      @user = User.find_by(id: current_user.id)
+      card = CreditCard.find_by(user_id: current_user.id)
     else
       flash[:alert] = "商品を購入するにはログインしてください"
       redirect_to root_path and return
@@ -29,7 +28,7 @@ class PurchasesController < ApplicationController
 
 
   def pay
-    card = CreditCard.where(user_id: current_user.id).first
+    card = CreditCard.find_by(user_id: current_user.id)
     Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
     Payjp::Charge.create(
       amount: @product.price, # 決済する値段

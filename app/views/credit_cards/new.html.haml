@@ -11,7 +11,7 @@
     ログインユーザー名
     %br/
     %span
-      = @user.nickname
+      = current_user.nickname
 
   = form_tag(credit_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
     .new_card_form   

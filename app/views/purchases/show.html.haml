@@ -26,13 +26,13 @@
           〒
           = @user.address.postal_code
         .card_purchace_main_prefecture_content_address
-          = @user.address.prefecture.name
-          = @user.address.city
-          = @user.address.address
-          = @user.address.apartment
+          = current_user.address.prefecture.name
+          = current_user.address.city
+          = current_user.address.address
+          = current_user.address.apartment
         .card_purchace_main_prefecture_content_name
-          = @user.last_name
-          = @user.first_name
+          = current_user.last_name
+          = current_user.first_name
     
     .card_buy
       - if @default_card_information.blank?
