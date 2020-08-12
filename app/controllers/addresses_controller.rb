@@ -5,7 +5,7 @@ class AddressesController < ApplicationController
   end
 
   def edit
-    @categories = Category.all
+    @user = User.find_by(id: current_user.id)
   end
 
   def update
@@ -13,7 +13,7 @@ class AddressesController < ApplicationController
       flash[:notice] = "配送情報の更新が完了しました！"
       redirect_to user_path(current_user.id)
     else
-      flash[:error] = "入力に誤りがあります。もう一度入力してください。"
+      flash[:alert] = "入力に誤りがあります。もう一度入力してください。"
       redirect_to edit_address_path(@address.id)
     end
   end

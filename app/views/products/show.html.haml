@@ -23,7 +23,7 @@
           %th.product_show_list_category
             カテゴリー
           %td
-            = @product.category.name
+            = @product.category.name 
         %tr
           %th.product_show_list_brand
             ブランド
@@ -69,14 +69,15 @@
         = @product.text
 
   .product_buy
-    - if @product.user_id == current_user.id      
+    - if user_signed_in? && @product.user_id == current_user.id      
       = link_to edit_product_path(@product.id), class: "product_buy_edit" do
         %span
           商品内容を編集する
     -else
-      .product_buy_yes
-        商品を購入する 
-
+      = link_to product_purchase_path(@product.id), class: "product_buy_edit" do
+        .product_buy_yes
+          商品購入画面に進む
+      
 .footer
   .footer_lists
     .footer_list

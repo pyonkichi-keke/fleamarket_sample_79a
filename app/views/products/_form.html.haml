@@ -2,8 +2,11 @@
   = image_tag "/material/logo/logo.png", class: "form_title_img"
 
 .form_content
-  = form_with model: product, local: true do |f|
-    
+  .notifications
+    %span
+      = render 'layouts/notifications'
+ 
+  = form_with model: product, local: true do |f|   
     .previews
       - if product.persisted?
         - product.images.each_with_index do |image, i| 
@@ -38,22 +41,22 @@
 
       .product_field
         = f.label :category_id, :カテゴリー
-        = f.collection_select :category_id, Category.all, :id, :name
+        = f.collection_select :category_id, Category.all, :id, :name, prompt: "選択してください"
         = fa_icon 'chevron-down', class: "product_field_icon"
 
       .product_field
         = f.label :brand_id, :ブランド
-        = f.collection_select :brand_id, Brand.all, :id, :name
+        = f.collection_select :brand_id, Brand.all, :id, :name, prompt: "選択してください"
         = fa_icon 'chevron-down', class: "product_field_icon"
       
       .product_field
         = f.label :status_id, :商品の状態
-        = f.collection_select :status_id, Status.all, :id, :name
+        = f.collection_select :status_id, Status.all, :id, :name, prompt: "選択してください"
         = fa_icon 'chevron-down', class: "product_field_icon"
       
       .product_field
         = f.label :size_id, :サイズ
-        = f.collection_select :size_id, Size.all, :id, :name
+        = f.collection_select :size_id, Size.all, :id, :name, prompt: "選択してください"
         = fa_icon 'chevron-down', class: "product_field_icon"
       
       .product_field
@@ -62,17 +65,17 @@
       
       .product_field
         = f.label :delivery_id, :配送料の負担
-        = f.collection_select :delivery_id, Delivery.all, :id, :name
+        = f.collection_select :delivery_id, Delivery.all, :id, :name, prompt: "選択してください"
         = fa_icon 'chevron-down', class: "product_field_icon"
       
       .product_field
         = f.label :deliverytime_id, :発送日時
-        = f.collection_select :deliverytime_id, Deliverytime.all, :id, :name
+        = f.collection_select :deliverytime_id, Deliverytime.all, :id, :name, prompt: "選択してください"
         = fa_icon 'chevron-down', class: "product_field_icon"
       
       .product_field
         = f.label :prefecture_id, :発送元の地域
-        = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択してください"
         = fa_icon 'chevron-down', class: "product_field_icon"
       
       .product_field

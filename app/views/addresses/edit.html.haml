@@ -2,80 +2,59 @@
   .header_search
     .header_search_logo
       = image_tag '/material/logo/logo.png', class: "header_search_logo"
-    .header_search_form
-      aaaaaaaaaaaaaaaaaaaaaaa
-      .header_search_form_submit
-        = image_tag "/material/icon/icon-search 1.png", class: "header_search_form_submit_icon"
-  .header_link
-    .header_link_left
-      .header_link_left_category
-        カテゴリー
-        .header_link_left_category_lists
-          - @categories.each do |category|
-            .header_link_left_category_lists_name
-              = category.name
-              %br/
-      .header_link_left_brand
-        ブランド
-    .header_link_right
-      - if user_signed_in?
-        .header_link_right_logout
-          = link_to "#{current_user.nickname}さん", "/users/#{current_user.id}"
-          = link_to destroy_user_session_path, method: :delete, class: "header_link_right_logout" do
-            ログアウト
-      - else
-        .header_link_right_login
-          = link_to new_user_session_path, class: "header_link_right_login" do
-            ログイン
-        .header_link_right_signup
-          = link_to new_user_registration_path, class: "header_link_right_signup" do
-            新規会員登録
+  .notifications
+    %span
+      = render 'layouts/notifications'
+
 
 .address_edit
-  = form_for @address do |f|
-    .address_edit__postal_code
-    = f.label :郵便番号
-    = f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", class:"size postal_code_size"
+  .address_edit_user
+    ログインユーザー名
+    %br/
+    = @user.nickname
 
-    .address_edit__prefecture_id
-    = f.label :都道府県名
-    = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{}, class:"size prefecture_id_size"
-    -# = f.text_field :prefecture_id, autofocus: true, autocomplete: "prefecture_id", class:"size prefecture_id_size"
+    = form_for @address do |f|
+      .address_edit_forms
+        .address_edit_form
+          = f.label :postal_code, :郵便番号
+          = f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", class:"address_edit_form_text"
 
-    .address_edit__city
-    = f.label :市町村名
-    = f.text_field :city,autofocus: true, autocomplete: "city",class:"size city_size"
-
-    .address_edit__address
-    = f.label :住所
-    = f.text_field :address,autofocus: true, autocomplete: "address",class:"size address_size"
-
-    .address_edit__apartment
-    = f.label :建物名
-    = f.text_field :apartment,autofocus: true, autocomplete: "apartment",class:"size apartment_size"
-
-    .address_edit__first_name
-    = f.label :名前
-    = f.text_field :first_name,autofocus: true, autocomplete: "first_name",class:"size edit_first_name_size"
-
-    .address_edit__last_name
-    = f.label :名字
-    = f.text_field :last_name,autofocus: true, autocomplete: "last_name",class:"size edit_last_name_size"
-
-    .address_edit__first_name_kana
-    = f.label :名前（カナ）
-    = f.text_field :first_name_kana,autofocus: true, autocomplete: "first_name_kana",class:"size first_name_kana_size"
-
-    .address_edit__last_name_kana
-    = f.label :名字（カナ）
-    = f.text_field :last_name_kana,autofocus: true, autocomplete: "last_name_kana",class:"size last_name_kana_size"
-
-    .address_edit__tel
-    = f.label :電話番号
-    = f.text_field :tel,autofocus: true, autocomplete: "tel",class:"size tel_size"
+        .address_edit_form
+          = f.label :prefecture_id, :都道府県名
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{}, class:"address_edit_form_text"
 
 
+        .address_edit_form
+          = f.label :city, :市町村名
+          = f.text_field :city, autofocus: true, autocomplete: "city",class:"address_edit_form_text"
 
+        .address_edit_form
+          = f.label :address, :住所
+          = f.text_field :address,autofocus: true, autocomplete: "address",class:"address_edit_form_text"
 
-    .address_edit__submit
-      = f.submit "変更する", class:"actions__b"
+        .address_edit_form
+          = f.label :apartment, :建物名
+          = f.text_field :apartment,autofocus: true, autocomplete: "apartment",class:"address_edit_form_text"
+
+        .address_edit_form
+          = f.label :first_name, :名前
+          = f.text_field :first_name,autofocus: true, autocomplete: "first_name",class:"address_edit_form_text"
+
+        .address_edit_form
+          = f.label :last_name, :名字
+          = f.text_field :last_name,autofocus: true, autocomplete: "last_name",class:"address_edit_form_text"
+
+        .address_edit_form
+          = f.label :first_name_kana, :名前（かな）
+          = f.text_field :first_name_kana,autofocus: true, autocomplete: "first_name_kana",class:"address_edit_form_text"
+
+        .address_edit_form
+          = f.label :last_name_kana, :名字（かな）
+          = f.text_field :last_name_kana,autofocus: true, autocomplete: "last_name_kana",class:"address_edit_form_text"
+
+        .address_edit_form
+          = f.label :tel, :電話番号
+          = f.text_field :tel, autofocus: true, autocomplete: "tel",class:"address_edit_form_text"
+
+      .address_edit_form_submit
+        = f.submit "変更する", class:"address_edit_form_submit_button"
