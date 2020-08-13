@@ -184,30 +184,30 @@
                   sold out
         
     
-    .main_pickup_brand
-      %h1
-        ピックアップブランド
-      %p
-        アーカイバ
-      .main_pickup_brand_lists
-        - @products.each do |product|
-          .main_pickup_brand_list
-            = link_to product_path(product.id) do
-              .main_pickup_brand_list_img
-                =image_tag product.images.first.image.url, class: "main_pickup_brand_list_img"
-              .main_pickup_brand_list_name
-                = product.name
-              .main_pickup_brand_list_option
-                .main_pickup_brand_list_option_price
-                  = product.price
-                  円
-                  %span
-                    (税込)
-                .main_pickup_brand_list_option_likes
-                  ❤️10
-              -if product.buy_user_id.present?
-                .sold_out
-                  sold out
+    -# .main_pickup_brand
+    -#   %h1
+    -#     ピックアップブランド
+    -#   %p
+    -#     アーカイバ
+    -#   .main_pickup_brand_lists
+    -#     - @products.each do |product|
+    -#       .main_pickup_brand_list
+    -#         = link_to product_path(product.id) do
+    -#           .main_pickup_brand_list_img
+    -#             =image_tag product.images.first.image.url, class: "main_pickup_brand_list_img"
+    -#           .main_pickup_brand_list_name
+    -#             = product.name
+    -#           .main_pickup_brand_list_option
+    -#             .main_pickup_brand_list_option_price
+    -#               = product.price
+    -#               円
+    -#               %span
+    -#                 (税込)
+    -#             .main_pickup_brand_list_option_likes
+    -#               ❤️10
+    -#           -if product.buy_user_id.present?
+    -#             .sold_out
+    -#               sold out
 
     .main_footer
       .main_footer_img
