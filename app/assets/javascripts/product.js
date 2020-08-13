@@ -76,9 +76,9 @@ $(document).on('turbolinks:load', ()=> {
   });
  
   $('.product_show').on('click', '.product_show_image', function(){
-    $('.active').removeClass('active')
-    $(this).addClass('active')
-    $(this).prependTo('.product_show_images') 
+    $('.active').removeAttr('src')
+    var src = $(this).attr('src')
+    $('.active').attr('src', src)
   });
 
 
